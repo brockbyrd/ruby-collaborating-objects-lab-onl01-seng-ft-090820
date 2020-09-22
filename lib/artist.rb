@@ -23,16 +23,25 @@ class Artist
     @@all << self
   end
 
-  def songs
-    # Song.all.select {|songs| songs.artist == self}
+  def self.find_or_create_by_name(name)
+    if self.find(name)
+      self.find(name)
+    else
+      self.create(name)
+    end
   end
 
-  def self.find_or_create_by_name
+  def self.find(name)
+    self.all.detect { |artist| artist.name == name }
+  end
 
+  def self.create(name)
+    artist = Artist.new(name)
+    artist
   end
 
   def print_songs
-
+    puts @songs.collect {|song| song.name}
   end
 
 end
