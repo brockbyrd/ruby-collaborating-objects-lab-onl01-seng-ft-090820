@@ -12,7 +12,11 @@ class Song
   end
 
   def self.all
+<<<<<<< HEAD
     @@all
+=======
+    Artist.all
+>>>>>>> d9fa0dbf69440c766cdeb15003bac6abd4ffd70d
   end
 
   def self.new_by_filename(file)
@@ -25,7 +29,11 @@ class Song
 
   def artist_name=(name)
     self.artist = Artist.find_or_create_by_name(name)
+<<<<<<< HEAD
     self.artist.add_song(self)
+=======
+    artist.add_song(self)
+>>>>>>> d9fa0dbf69440c766cdeb15003bac6abd4ffd70d
   end
 
 end

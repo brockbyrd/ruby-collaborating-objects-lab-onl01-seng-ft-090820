@@ -37,6 +37,10 @@ class Artist
 
   def self.create(name)
     artist = Artist.new(name)
+<<<<<<< HEAD
+=======
+    artist.save
+>>>>>>> d9fa0dbf69440c766cdeb15003bac6abd4ffd70d
     artist
   end
 
